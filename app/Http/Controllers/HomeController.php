@@ -20,4 +20,27 @@ class HomeController extends Controller
         $path = Storage::putFileAs('photo',$request->file('image'),$newName);
         dd($path);
     }
+
+    public function list(){
+        // show all file in directory
+        // $files = Storage::files('');
+        // $files = Storage::allFiles('');
+        // $files = Storage::allFiles('public');
+
+        // show  directories from storge
+        // $directories = Storage::directories('');
+     
+        // create directory
+        // $directory = Storage::makeDirectory('image');
+        // $directory = Storage::makeDirectory('image/gif');
+
+        // show  all directories from storge
+        $directories = Storage::allDirectories('');
+
+        // delete directory
+        // $directory = Storage::deleteDirectory('photo');
+        $directory = Storage::deleteDirectory('image/gif');
+
+        dd($directory);
+    }
 }

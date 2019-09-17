@@ -43,4 +43,10 @@ class HomeController extends Controller
 
         dd($directory);
     }
+
+    public function show(){
+        $path = Storage::url('public/V61iK8jeQtPIkcIFRN8QeyThhLBRWedvQeBnDgOK.jpeg');
+        // return '<img src="'.$path.'" alt="">';
+        return '<img src="'.asset('storage/V61iK8jeQtPIkcIFRN8QeyThhLBRWedvQeBnDgOK.jpeg').'" alt="">';
+    }
 }

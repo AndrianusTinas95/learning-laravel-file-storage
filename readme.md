@@ -5,3 +5,4 @@ here I am Learn
 2. Menggunakan Facade Storage untuk upload File di Laravel Tutorial
 3. Mendapatkan Informasi File yang diunggah Laravel File Storage
 4. Menampilkan Folder dan Files di dalam Laravel dengan File Storage
+5. Menampilkan File ke dalam Browser dari Storage Laravel

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -48,5 +49,24 @@ class HomeController extends Controller
         $path = Storage::url('public/V61iK8jeQtPIkcIFRN8QeyThhLBRWedvQeBnDgOK.jpeg');
         // return '<img src="'.$path.'" alt="">';
         return '<img src="'.asset('storage/V61iK8jeQtPIkcIFRN8QeyThhLBRWedvQeBnDgOK.jpeg').'" alt="">';
+    }
+
+    public function copy(){
+        try {
+            // file - target
+            Storage::copy('public/V61iK8jeQtPIkcIFRN8QeyThhLBRWedvQeBnDgOK.jpeg','image/tamp/copy-image.jpeg');
+            return 'success';
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+    public function move(){
+        try {
+            // file - target
+            Storage::move('photo/copy-image.jpeg','public/move-image.jpeg');
+            return 'success';
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 }

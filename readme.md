@@ -6,3 +6,4 @@ here I am Learn
 3. Mendapatkan Informasi File yang diunggah Laravel File Storage
 4. Menampilkan Folder dan Files di dalam Laravel dengan File Storage
 5. Menampilkan File ke dalam Browser dari Storage Laravel
+6. Cara Menyalin dan Memindahkan File dengan Laravel Storage

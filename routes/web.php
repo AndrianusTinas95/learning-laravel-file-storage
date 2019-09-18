@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::post('upload','HomeController@upload');
 Route::get('list','HomeController@list');
 Route::get('show','HomeController@show');
+Route::get('copy','HomeController@copy');
+Route::get('move','HomeController@move');

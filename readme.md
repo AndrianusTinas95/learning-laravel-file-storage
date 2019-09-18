@@ -7,3 +7,4 @@ here I am Learn
 4. Menampilkan Folder dan Files di dalam Laravel dengan File Storage
 5. Menampilkan File ke dalam Browser dari Storage Laravel
 6. Cara Menyalin dan Memindahkan File dengan Laravel Storage
+7. Cara Mengunduh dan Menghapus File dari Laravel Storage

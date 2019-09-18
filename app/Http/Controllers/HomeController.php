@@ -18,7 +18,7 @@ class HomeController extends Controller
         $extension = $file->getClientOriginalExtension();
         $newName = $name . '.' . $extension;
         // $path = $request->file('image')->storeAs('public',$newName);
-        $path = Storage::putFileAs('photo',$request->file('image'),$newName);
+        $path = Storage::putFileAs('public/upload',$request->file('image'),$newName);
         dd($path);
     }
 
@@ -66,6 +66,23 @@ class HomeController extends Controller
             Storage::move('photo/copy-image.jpeg','public/move-image.jpeg');
             return 'success';
         } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function download(){
+        try {
+            return Storage::disk('local')->download('public/upload/1568805171.jpg');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function delete(){
+        try {
+            Storage::disk('local')->delete('public/upload/1568805171.jpg');
+            return 'Deleted';
+        } catch (\Exception $e) {
             return $e->getMessage();
         }
     }

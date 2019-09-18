@@ -20,3 +20,6 @@ Route::get('list','HomeController@list');
 Route::get('show','HomeController@show');
 Route::get('copy','HomeController@copy');
 Route::get('move','HomeController@move');
+Route::get('move','HomeController@move');
+Route::get('download','HomeController@download');
+Route::get('delete','HomeController@delete');

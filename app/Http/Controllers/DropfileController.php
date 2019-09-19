@@ -28,8 +28,8 @@ class DropfileController extends Controller
                     $fileSize = $file->getClientSize();
                     $name = uniqid().'.'.$fileExtension;
 
-                    Storege::dist('dropbox')->putFileAs('public/upload',$file,$name);
-                    $this->dropbox->createSharedLinkWhitSettings('public/upload/'.$name);
+                    Storage::disk('dropbox')->putFileAs('public/upload',$file,$name);
+                    $this->dropbox->createSharedLinkWithSettings('public/upload/'.$name);
 
                     Dropfile::create([
                         'file_title' => $name,
@@ -61,7 +61,7 @@ class DropfileController extends Controller
 
     public function download($fileTitle){
         try {
-            return Storage::dist('dropbox')->download('public/upload/'.$fileTitle);
+            return Storage::disk('dropbox')->download('public/upload/'.$fileTitle);
         } catch (\Exception $e) {
             return abort(404);
         }
@@ -70,8 +70,7 @@ class DropfileController extends Controller
     public function destroy($id){
         try {
             $file = Dropfile::find($id);
-            
-            Storage::dist('dropbox')->delete('public/upload/'.$file->file_title);
+            Storage::disk('dropbox')->delete('public/upload/'.$file->file_title);
             $file->delete();
 
             return redirect('drop');

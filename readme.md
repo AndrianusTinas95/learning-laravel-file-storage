@@ -13,3 +13,4 @@ here I am Learn
 10. Mengunggah File Ke Dropbox - Install Package dan Konfigurasi
 11. Mengunggah File Ke Dropbox - Membuat Model dan Migration
 12. Mengunggah File Ke Dropbox - Membuat Controller
+13. Mengunggah File Ke Dropbox Menggunakan Laravel Storage

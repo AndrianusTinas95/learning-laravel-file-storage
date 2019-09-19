@@ -87,7 +87,7 @@
                <div>
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         @csrf
-                        <input type="file" name="image" id="image">
+                        <input type="file" name="image[]" id="image" multiple="true">
                         <button type="submit">Submit</button>
                     </form>
                </div>

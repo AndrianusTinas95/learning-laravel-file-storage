@@ -23,21 +23,28 @@ class HomeController extends Controller
         // $path = $request->file('image')->storeAs('public','gambar');
         
         try {
-            $file = $request->file('image');
-            $name = time();
-            $extension = $file->getClientOriginalExtension();
-            $newName = $name . '.' . $extension;
-            // $path = $request->file('image')->storeAs('public',$newName);
-            $path = Storage::putFileAs('public/upload',$request->file('image'),$newName);
+            if($request->hasFile('image')){
+                $files = $request->file('image');
 
-            $size = $file->getClientSize();
-            
-            $data=[
-                'path'=>'storage/upload/'.$newName,
-                'size'=>$size
-            ];
+                foreach ($files as $file) {
+                    $name = uniqid();
+                    $extension = $file->getClientOriginalExtension();
+                    $newName = $name . '.' . $extension;
+                    // $path = $request->file('image')->storeAs('public',$newName);
+                    $path = Storage::putFileAs('public/upload',$file,$newName);
+    
+                    $size = $file->getClientSize();
+                    
+                    $data=[
+                        'path'=>'storage/upload/'.$newName,
+                        'size'=>$size
+                    ];
+                    Upload::create($data);
+                }
 
-            return Upload::create($data);
+                return 'Success';
+            }
+            return 'Empty File';
 
         } catch (\Exception $e) {
             return $e->getMessage();

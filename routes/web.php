@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('index','HomeController@index');
 Route::post('upload','HomeController@upload');
 Route::get('list','HomeController@list');
 Route::get('show','HomeController@show');

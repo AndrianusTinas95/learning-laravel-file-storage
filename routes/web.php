@@ -24,3 +24,10 @@ Route::get('move','HomeController@move');
 Route::get('move','HomeController@move');
 Route::get('download','HomeController@download');
 Route::get('delete','HomeController@delete');
+
+
+Route::get('drop','DropfileController@index');
+Route::post('drop','DropfileController@store');
+Route::get('drop/{filetitle}','DropfileController@show');
+Route::get('drop/{filetitle}/download','DropfileController@download');
+Route::get('drop/{id}/destroy','DropfileController@destroy');

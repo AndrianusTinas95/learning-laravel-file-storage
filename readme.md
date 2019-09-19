@@ -11,3 +11,4 @@ here I am Learn
 8. Upload File dan Simpan ke Database dengan Laravel Storage
 9. Multiple Files Upload Menggunakan Laravel Storage
 10. Mengunggah File Ke Dropbox - Install Package dan Konfigurasi
+11. Mengunggah File Ke Dropbox - Membuat Model dan Migration
